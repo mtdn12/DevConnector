@@ -14,11 +14,12 @@ const validatePostInput = require("../../validation/post");
 // @route   GET api/posts/test
 // @desc    Tests post route
 // @access  Public
-router.get("/test", (req, res) =>
+router.get("/test", (req, res) =>{
+  console.log('hi')
   res.json({
     msg: "Posts Works"
   })
-);
+})
 
 // @route   POST api/posts
 // @desc    Create post
