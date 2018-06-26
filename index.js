@@ -37,10 +37,12 @@ app.use("/api/users", users);
 app.use("/api/profile", profile);
 app.use("/api/posts", posts);
 
-// Server static assets if in production
-if(process.env.NODE_ENV ==='production') {
-  // Set static folder
+// Check for production environment
+
+if ( process.env.NODE_ENV ==='production') {
+  // Express will serve up production assets like our main.js file , or main.css file
   app.use(express.static('client/build'))
+
   // Express will serve up the index.html file if it doesn't recognize the route
   const path = require ('path')
   app.get('*', (req, res) => {
